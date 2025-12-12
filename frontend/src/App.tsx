@@ -38,8 +38,10 @@ function App() {
 }
 
 function UseApi() {
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
   async function fetchData() {
-    const response = await fetch("http://localhost:5172/weatherforecast");
+    const response = await fetch(`${apiBaseUrl}/weatherforecast`);
     const data = await response.json();
     console.log(data);
   }
